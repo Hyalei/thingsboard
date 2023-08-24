@@ -436,7 +436,7 @@ redis:
   connection:
     type: "${REDIS_CONNECTION_TYPE:standalone}"
   standalone:
-    host: "${REDIS_HOST:localhost}"
+    host: "${REDIS_HOST:192.168.100.100}"
     port: "${REDIS_PORT:6379}"
     useDefaultClientConfig: "${REDIS_USE_DEFAULT_CLIENT_CONFIG:true}"
     # this value may be used only if you used not default ClientConfig
@@ -454,9 +454,9 @@ redis:
     max-redirects: "${REDIS_MAX_REDIRECTS:12}"
     useDefaultPoolConfig: "${REDIS_USE_DEFAULT_POOL_CONFIG:true}"
   # db index
-  db: "${REDIS_DB:0}"
+  db: "${REDIS_DB:1}"
   # db password
-  password: "${REDIS_PASSWORD:}"
+  password: "${REDIS_PASSWORD:12345600}"
   # pool config
   pool_config:
     maxTotal: "${REDIS_POOL_CONFIG_MAX_TOTAL:128}"
@@ -526,9 +526,9 @@ spring:
     database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
   datasource:
     driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
-    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/thingsboard}"
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://192.168.100.100:5432/thingsboard}"
     username: "${SPRING_DATASOURCE_USERNAME:postgres}"
-    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
+    password: "${SPRING_DATASOURCE_PASSWORD:12345600}"
     hikari:
       maximumPoolSize: "${SPRING_DATASOURCE_MAXIMUM_POOL_SIZE:16}"
 
